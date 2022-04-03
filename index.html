@@ -85,7 +85,7 @@
 
         function ConnectWallet() {
             window.solana.connect();
-            window.solana.on("connect", () => myGameInstance.SendMessage('Bridge', 'ShowPublicKey', window.solflare.publicKey.toString()));
+            window.solana.on("connect", () => myGameInstance.SendMessage('Bridge', 'ShowPublicKey', window.solana.publicKey.toString()));
         }
       document.body.appendChild(script);
     </script>
