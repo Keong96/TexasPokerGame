@@ -84,8 +84,14 @@
       };
 
         function ConnectWallet() {
+          if ("solana" in window) {
             window.solana.connect();
             window.solana.on("connect", () => myGameInstance.SendMessage('Bridge', 'ShowPublicKey', window.solana.publicKey.toString()));
+          }  
+          else
+          {
+            window.open("https://phantom.app/", "_blank");
+          }
         }
       document.body.appendChild(script);
     </script>
