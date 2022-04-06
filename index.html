@@ -83,7 +83,7 @@
         });
       };
 
-        function ConnectWallet() {
+      function ConnectWallet() {
           if ("solana" in window) {
             window.solana.connect();
             window.solana.on("connect", () => myGameInstance.SendMessage('Bridge', 'ShowPublicKey', window.solana.publicKey.toString()));
